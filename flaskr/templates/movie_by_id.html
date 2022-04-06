@@ -1,0 +1,26 @@
+{% if not movies[0] %}
+<th>Movie Not Found</th>
+{% elif not movies[0]["tagline"] %}
+
+{% for movie in movies %}
+<tr>
+    <th> {{ movie['id'] }}</th>
+    <th> {{ movie['title'] }}</th>
+    <th> {{ movie['homepage'] }}</th>
+    
+
+</tr>
+{% endfor %}
+
+{% else %}
+{% for movie in movies %}
+<tr>
+    <th> {{ movie['id'] }}</th>
+    <th> {{ movie['title'] }}</th>
+    <th>  no homepage </th>
+    <th> {{ movie['tagline'] }}</th>
+
+</tr>
+{% endfor %}
+
+{% endif %}
